@@ -21,5 +21,6 @@ For optional vars, you can :
   * set `RELAY_HOST` and `RELAY_PORT`
   * set `RELAY_HOST`, `RELAY_PORT`, `RELAY_USERNAME` and `RELAY_PASSWORD`
   * set `RELAY_HOST`, `RELAY_USERNAME` and `RELAY_PASSWORD`
+  * set `RELAY_PROTOCOL` to define the protocol (smtp, smtps) to be used, see https://wiki.debian.org/Exim#Communicating_with_a_smarthost
 
 Any other combination should not work.

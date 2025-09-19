@@ -21,6 +21,10 @@ if [ -n "$RELAY_USERNAME" ]; then
     echo "*:${RELAY_USERNAME}:${RELAY_PASSWORD}" > /etc/exim4/passwd.client
 fi
 
+if [ -n "$RELAY_PROTOCOL" ]; then
+  echo "REMOTE_SMTP_SMARTHOST_PROTOCOL=${RELAY_PROTOCOL}" >> /etc/exim4/exim4.conf.localmacros
+fi
+
 update-exim4.conf
 
 chown -R Debian-exim /var/spool/exim4
