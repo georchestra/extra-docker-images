@@ -30,3 +30,13 @@ RUN cp /etc/aliases /etc/aliases.stub
 EXPOSE 25
 ENTRYPOINT ["/docker-entrypoint.sh"]
 CMD ["/usr/sbin/exim4", "-bd", "-d-all", "-v", "-q30m"]
+
+# OCI image labels (https://github.com/opencontainers/image-spec/blob/main/annotations.md)
+LABEL org.opencontainers.image.title="exim" \
+      org.opencontainers.image.description="Exim mail relay for geOrchestra" \
+      org.opencontainers.image.authors="geOrchestra <psc@georchestra.org>" \
+      org.opencontainers.image.vendor="geOrchestra" \
+      org.opencontainers.image.licenses="GPL-3.0-or-later" \
+      org.opencontainers.image.url="https://docs.georchestra.org/" \
+      org.opencontainers.image.documentation="https://docs.georchestra.org/" \
+      org.opencontainers.image.source="https://github.com/georchestra/extra-docker-images"
