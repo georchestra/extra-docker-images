@@ -9,7 +9,7 @@ echo "root: $POSTMASTER" >> /etc/aliases
 sed -i s/{helo_data}/${MAILNAME}/ /etc/exim4/exim4.conf.localmacros
 
 if [ -n "$RELAY_HOST" ]; then
-    SMART_HOST=${RELAY_HOST}::${RELAY_PORT:-25}
+    SMART_HOST=${RELAY_HOST}:${RELAY_PORT:-25}
     sed -i s/{config_type}/satellite/ /etc/exim4/update-exim4.conf.conf
     sed -i s/{smart_host}/${SMART_HOST}/ /etc/exim4/update-exim4.conf.conf
 else
